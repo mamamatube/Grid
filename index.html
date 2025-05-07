@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/HTML/HTML.html">HTML編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS basic/CSS basic.html">CSS基本編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Advanced/CSS advanced.html">CSS応用編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Selectors/selectors.html">Selectors編</a>
+    </div>
+    <div>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Flexbox/flexbox.html">Flexbox編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS MediaQueries/MediaQueries.html">MediaQueries編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Animation/Animation.html">Animation編</a>
+      <a href="/Users/mastudo/Desktop/webデザ/Lesson/CSS Nesting/Nesting.html">Nesting編</a>
+      <p>Grid編</p>
+    </div>
+
+    <a href="/Users/mastudo/Desktop/webデザ/Lesson/index.html" class="a-lesson">←Lesson</a>
+    <a class="a-top" href="#">↑TOP</a>
+  </header>
+  <main>
+    <section>
+      <h1>グリッドコンテナーの指定</h1>
+      <section class="grid">
+        <h4 class="text">
+          大枠の<code>&lt;div&gt;</code>にグリッドコンテナを指定し、<code>grid-template-columns</code>・<code>rows</code>でグリッドアイテムの配置を指定
+        </h4>
+        <div class="box-1">
+          <p><code>&lt;div class="container"&gt;<br>
+            &lt;div class="item-1"&gt;1&lt;/div&gt;<br>
+            &lt;div class="item-2"&gt;2&lt;/div&gt;<br>
+            &lt;div class="item-3"&gt;3&lt;/div&gt;<br>
+            &lt;div class="item-4"&gt;4&lt;/div&gt;<br>
+            &lt;div class="item-5"&gt;5&lt;/div&gt;<br>
+            &lt;div class="item-6"&gt;6&lt;/div&gt;<br>
+            &lt;/div&gt;</code>
+          </p>
+        </div>
+        <div class="box-2">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 100px;<br>
+        grid-template-rows: 100px 100px 100px;<br>
+        }<br>
+        .item-1 { background: #d66a6a; }<br>
+        .item-2 { background: #e6a97e; }<br>
+        .item-3 { background: #f2d479; }<br>
+        .item-4 { background: #a7c97f; }<br>
+        .item-5 { background: #7bb38e; }<br>
+        .item-6 { background: #6dbec9; }</code></p>
+        </div>
+        <div class="box-3">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-2">
+        <h4 class="text">（※以降HTML省略）単位<code>fr</code>(fraction)を使い、２列目：３列目＝２：１で可変するように指定</h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 2fr 1fr;<br>
+        grid-template-rows: 100px 100px;<br>
+        }<br>
+        .item-1 { background: #d66a6a; }<br>
+        .item-2 { background: #e6a97e; }<br>
+        .item-3 { background: #f2d479; }<br>
+        .item-4 { background: #a7c97f; }<br>
+        .item-5 { background: #7bb38e; }<br>
+        .item-6 { background: #6dbec9; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-3">
+        <h4 class="text"><code>repeat( )</code>で同じ幅の繰り返しの省略、<br><code>auto-fill</code>でコンテナー幅に応じてコンテナーを満たすまで列が増えるよう指定
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: repeat(autofill, 100px);<br>
+        grid-template-rows: 100px 100px;<br>
+        }<br>
+        .item-1 { background: #d66a6a; }<br>
+        .item-2 { background: #e6a97e; }<br>
+        .item-3 { background: #f2d479; }<br>
+        .item-4 { background: #a7c97f; }<br>
+        .item-5 { background: #7bb38e; }<br>
+        .item-6 { background: #6dbec9; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-4">
+        <h4 class="text">
+          上記の列増減をスムーズにするため、<code>minmax( )</code>を用いて特定幅まではアイテム幅が伸縮するよう指定、<br>また、<code>auto-fill</code>→<code>auto-fit</code>で設置している数のアイテム以上に幅が広がった際に、余白を埋めるよう指定
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns:<br>　repeat(autofit, minmax(100px,1fr));<br>
+        grid-template-rows: 100px 100px;<br>
+        }<br>
+        .item-1 { background: #d66a6a; }<br>
+        .item-2 { background: #e6a97e; }<br>
+        .item-3 { background: #f2d479; }<br>
+        .item-4 { background: #a7c97f; }<br>
+        .item-5 { background: #7bb38e; }<br>
+        .item-6 { background: #6dbec9; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-5">
+        <h4 class="text">グリッドアイテムの並び替え<br>デフォルトは左上から右に進むが、<code>grid-auto-flow:column;</code>を指定すると、左上から下に進んで並ぶようになる
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: repeat(3, 100px);<br>
+        grid-template-rows: repeat(2, 100px);<br>
+        grid-auto-flow:column;<br>
+        }<br>
+        .item-1 { background: #d66a6a; }<br>
+        .item-2 { background: #e6a97e; }<br>
+        .item-3 { background: #f2d479; }<br>
+        .item-4 { background: #a7c97f; }<br>
+        .item-5 { background: #7bb38e; }<br>
+        .item-6 { background: #6dbec9; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-6">
+        <h4 class="text">グリッドアイテム数がコンテナーの枠を超え溢れた場合、溢れた分はサイズ指定されていないため、<br>デフォルトではコンテナーが埋まるサイズに強制される</h4>
+        <div class="box-1">
+          <p>横</p>
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: repeat(2, 100px);<br>
+        grid-template-rows: repeat(2, 100px);<br>
+        grid-auto-flow:column;<br>
+        }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+        <div class="box-1">
+          <p>縦</p>
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: repeat(2, 100px);<br>
+        grid-template-rows: repeat(2, 100px);<br>
+        }</code></p>
+        </div>
+        <div class="box-3">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-7">
+        <h4 class="text">
+          そこで、溢れたアイテムのサイズを指定するプロパティとして<code>grid-auto-columns</code>、<code>gurid-auto-rows</code>を用いる。<br>定期的にコンテンツが増える場合のコンテナ配置に役立つ
+        </h4>
+        <div class="box-1">
+          <p>横</p>
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: repeat(2, 100px);<br>
+        grid-template-rows: repeat(2, 100px);<br>
+        grid-auto-flow:column;<br>
+        grid-auto-columns: 100px;<br>
+        }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+        <div class="box-1">
+          <p>縦</p>
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: repeat(2, 100px);<br>
+        grid-template-rows: repeat(2, 100px);<br>
+        grid-auto-rows:100px;<br>
+        }</code></p>
+        </div>
+        <div class="box-3">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-8">
+        <h4 class="text">
+          <code>gap</code>プロパティでアイテム同士の余白を指定<br><code>justify-content</code>、<code>align-ccontent</code>で、領域内でのコンテナーの位置を指定する（<code>start</code>、<code>center</code>、<code>end</code>を用いる）<br>（<code>plate-container: end end;</code>(両方同じ値の場合は<code>plate-container: end;</code>でもOK)でまとめることも可能）
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 100px 100px;<br>
+        grid-template-rows: 100px 100px;<br>
+        height:300px;<br>
+        gap:8px;<br>
+        justify-content: end;<br>
+        align-content: end;<br>
+        }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-9">
+        <h4 class="text">
+          アイテムのグリッド内での位置は<code>justify-items</code>と<code>align-items</code>、または<code>place-items</code>を使って指定できる。<br>（デフォルトは<code>stretch</code>というマス目いっぱいに広がる値。）
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 100px 100px;<br>
+        grid-template-rows: 100px 100px;<br>
+        height:300px;<br>
+        gap:8px;<br>
+        place-content: center;<br>
+        place-items: end;<br>
+        }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-10">
+        <h4 class="text">
+          コンテナー内のアイテム位置を指定する場合、<code>grid-column</code>、<code>grid-row</code>を用いて移動したいアイテムに場所を指定する。<br>指定したい範囲が複数要素で被った場合、表示させたい方を優先するために<code>z-index</code>が活用できる
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 100px 100px;<br>
+        grid-template-rows: 100px 100px;<br>
+        text-align: center;<br>
+        }<br>
+        .item-1 { background: #d66a6a;<br>
+        grid-column: 2 / 4;<br>
+      grid-row: 2 / 3;<br>
+    z-index:1; }<br>
+        .item-2 { background: #e6a97e;<br>
+          grid-column: 3 / 4;<br>
+        grid-row: 1 / 3; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-11">
+        <h4 class="text">
+          場所を指定する際、<code>span</code>を用いて、○マス分と指定することも可能。例）2から２マス分＝<code>2 / span 2;</code><br>また、番号を指定せず<code>span 2;</code>のみ指定した場合、２マス分のサイズで空いている箇所に配置する指定となる。
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 100px 100px;<br>
+        grid-template-rows: 100px 100px;<br>
+        text-align: center;<br>
+        }<br>
+        .item-1 { background: #d66a6a;<br>
+        grid-column: 2 / span 2;<br>
+        grid-row: 2 / 3;<br>
+        z-index:1; }<br>
+        .item-4 { background: #a7c97f;<br>
+          grid-column: span 2; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-12">
+        <h4 class="text">
+          <code>span</code>などを用いた際、上記のように移動によってグリッドに空白ができた場合、<br><code>grid-auto-flow: dense;</code>というプロパティで詰めることができる。<br>画像ギャラリーなどのレイアウトで役立つ
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 100px 100px;<br>
+        grid-template-rows: 100px 100px;<br>
+        text-align: center;<br>
+        grid-auto-flow: dense;<br>
+        }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-13">
+        <h4 class="text">
+          <code>grid-template-areas</code>、<code>grid-area</code>を使うことで、より視覚的に判りやすくアイテムの配置指定ができる
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        grid-template-colmns: 100px 100px 100px;<br>
+        grid-template-rows: 100px 100px;<br>
+        text-align: center;<br>
+        grid-template-areas:<br>
+        " . . . "<br>
+        " . my-area my-area";<br>
+        }<br>
+        .item-1 { background: #d66a6a;<br>
+        grid-area: my-area; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-14">
+        <h4 class="text">
+          <code>grid-template-columns</code>、<code>grid-template-roes</code>、<code>grid-template-areas</code>は一括指定で<br><code>grid-template</code>として指定できる
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+        display: grid;<br>
+        text-align: center;<br>
+        grid-template:<br>
+        " . . . " 100px <br>
+        " . my-area my-area" 100px<br>
+        / 100px 100px 100px;<br>
+        }<br>
+        .item-1 { background: #d66a6a;<br>
+        grid-area: my-area; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-15">
+        <h4 class="text">
+          コンテナー内のアイテムのグリッド内位置を個々で調整したい場合、<code>justify-self</code>、<code>align-self</code><br>または<code>place-self</code>を動かしたいアイテムに指定する
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+            grid-template-columns: 100px 100px 100px;<br>
+            grid-template-rows: 100px 100px;<br>
+            display: grid;<br>
+            text-align: center;<br>
+            }<br>
+            .item-5 { background: #7bb38e;<br>
+            place-self: end center; }</code></p>
+            <p>＝(<code>justify-self: center;<br>
+              align-self:end;</code>)</p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-16">
+        <h4 class="text">
+          特定のアイテムをグリッドの先頭に持って行きたい場合は<code>order</code>を0以下の値で指定する
+        </h4>
+        <div class="box-1">
+          <p><code>.container {<br>
+            grid-template-columns: 100px 100px 100px;<br>
+            grid-template-rows: 100px 100px;<br>
+            display: grid;<br>
+            text-align: center;<br>
+            }<br>
+            .item-5 { background: #7bb38e;<br>
+            place-self: end center;<br>
+            order:-1; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <div class="item-1">1</div>
+            <div class="item-2">2</div>
+            <div class="item-3">3</div>
+            <div class="item-4">4</div>
+            <div class="item-5">5</div>
+            <div class="item-6">6</div>
+          </div>
+        </div>
+      </section>
+      <section class="grid-17">
+        <h4 class="text">
+          グリッドコンテナー内のアイテムに対し、コンテナーのレイアウト設定を機能させたい場合は、<br>アイテム自体もグリッドレイアウトにした上で、引き継ぎたいプロパティに対し<code>subgrid</code>を指定する。
+        </h4>
+        <p class="text-2">以下は、<code>ul</code>に対し<code>.container</code>の<code>grid-template-rows</code>を引き継いだことで、各行の黒丸位置が横並びで揃っている</p>
+        <div class="box-1">
+          <p><code>.container {<br>
+            grid-template-columns: 200px 200px;<br>
+            grid-template-rows: repeat(4, auto);<br>
+            display: grid; }<br>
+            <br>
+            ul { grid-row: span 4;<br>
+            display: grid;<br>
+            grid-template-rows: subgrid; }</code></p>
+        </div>
+        <div class="box-2">
+          <div class="container">
+            <ul>
+              <li>item 1</li>
+              <li>item 2 item 2 item 2 item 2 item 2</li>
+              <li>item 3</li>
+              <li>item 4</li>
+            </ul>
+            <ul>
+              <li>item 1</li>
+              <li>item 2</li>
+              <li>item 3 item 3 item 3 item 3</li>
+              <li>item 4</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+
+</html>
